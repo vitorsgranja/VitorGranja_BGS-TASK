@@ -13,6 +13,7 @@ public class GameMenu : MonoBehaviour {
   [SerializeField] private GameObject shop;
   [SerializeField] private TMP_Text money;
 
+  // Load the Main menu Scene
   public void ReturnToMenu() {
     SceneManager.LoadScene("Menu");
   }
@@ -26,11 +27,14 @@ public class GameMenu : MonoBehaviour {
     }
   }
 
-  private void ActivateMenu() { // close all other menus and open/close EscMenu
+  // close all other menus and open/close EscMenu
+  private void ActivateMenu() { 
     shop.SetActive(false);
     inventory.SetActive(false);
     escMenu.SetActive(!escMenu.activeInHierarchy);
   }
+
+  // Activate/Deactivate shop and inventory
   public void ActivateShop() {
     if(!shop.activeInHierarchy && !escMenu.activeInHierarchy) {
       shop.SetActive(true);
@@ -40,6 +44,8 @@ public class GameMenu : MonoBehaviour {
       inventory.SetActive(false);
     }
   }
+
+  // Activate/Deactivate Inventory
   private void ActivateInventory() {
     if(!inventory.activeInHierarchy && !escMenu.activeInHierarchy) {
       inventory.SetActive(true);
@@ -47,6 +53,8 @@ public class GameMenu : MonoBehaviour {
       inventory.SetActive(false);
     }
   }
+
+  // Tells the GameManager any change on Player money and updates the HUD
   public void UpdateMoney(int change) {
     double tempMoney = GameManager.instance.AddMoney(change);
     money.text = "$" + tempMoney.ToString();

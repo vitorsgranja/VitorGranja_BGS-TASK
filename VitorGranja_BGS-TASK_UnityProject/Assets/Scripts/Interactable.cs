@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour {
     }
   }
 
+  // Controls if the NPC can interact with you
   public virtual void EnableInteraction(bool canInteract) {
     if(canInteract) {
       interactionText.SetActive(true);
@@ -22,6 +23,7 @@ public class Interactable : MonoBehaviour {
     }
   }
 
+  // Triggers generic NPC interactions when player is nearby andd presses [E]
   public virtual void Interact() {
     Debug.Log("Interacting with " + gameObject.name);
   }

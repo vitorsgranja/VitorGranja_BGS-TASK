@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d097ae7f700bb42a914550a35b2894, type: 3}
+  m_Name: Hats_LongHair
+  m_EditorClassIdentifier: 
+  outfitName: Long Hair
+  icon: {fileID: -273408490, guid: ad15c85348b039d42ac41d7c3db824d1, type: 3}
+  price: 20
+  outfitType: 1
+  outFitAnimation: {fileID: 1119007591931580017, guid: adf733e4735120d4d8a290366072e1ce, type: 3}
+  bought: 0
