@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.Animations;
 
 [CreateAssetMenu(fileName = "New Outfit",menuName = "Outfit")]
 public class Outfit : ScriptableObject {
