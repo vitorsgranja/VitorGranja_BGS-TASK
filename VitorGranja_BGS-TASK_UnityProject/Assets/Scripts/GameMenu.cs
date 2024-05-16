@@ -11,6 +11,7 @@ public class GameMenu : MonoBehaviour {
   [SerializeField] private GameObject escMenu;
   [SerializeField] private GameObject inventory;
   [SerializeField] private GameObject shop;
+  [SerializeField] private GameObject settings;
   [SerializeField] private TMP_Text money;
 
   // Load the Main menu Scene
@@ -31,6 +32,7 @@ public class GameMenu : MonoBehaviour {
   private void ActivateMenu() { 
     shop.SetActive(false);
     inventory.SetActive(false);
+    settings.SetActive(false);
     escMenu.SetActive(!escMenu.activeInHierarchy);
   }
 

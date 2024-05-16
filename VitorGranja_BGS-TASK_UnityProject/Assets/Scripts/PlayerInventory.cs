@@ -8,6 +8,7 @@ public class PlayerInventory : GenericInventoryManager {
   // Tells OutfitManager to equip an item
   public void EquipItem() {
     if(selectedSlot != null) {
+      AudioManager.instance.PlaySound(AudioManager.instance.effectList[1]);
       Outfit selectedItem = selectedSlot.GetComponent<InventorySlot>().item;
       outfitManager.EquipOutfit(selectedItem);
     }
@@ -15,7 +16,9 @@ public class PlayerInventory : GenericInventoryManager {
 
   // Tells OutfitManager to unequip an item
   public void UnequipItem() {
-    if(selectedSlot != null) {
+    if(selectedSlot != null && outfitManager.equipedClothes == selectedSlot.GetComponent<InventorySlot>().item.outFitAnimation
+                             ||outfitManager.equipedHat == selectedSlot.GetComponent<InventorySlot>().item.outFitAnimation) {
+      AudioManager.instance.PlaySound(AudioManager.instance.effectList[1]);
       Outfit selectedItem = selectedSlot.GetComponent<InventorySlot>().item;
       outfitManager.UnequipOutfit(selectedItem);
     }

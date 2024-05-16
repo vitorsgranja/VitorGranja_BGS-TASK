@@ -9,6 +9,7 @@ public class Work : Interactable {
 
   public override void Interact() {
     base.Interact();
+    AudioManager.instance.PlaySound(AudioManager.instance.effectList[1]);
     gameMenu.UpdateMoney(moneyReward);
   }
 }

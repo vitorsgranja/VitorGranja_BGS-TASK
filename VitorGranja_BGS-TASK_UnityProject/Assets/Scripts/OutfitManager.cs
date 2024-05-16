@@ -7,6 +7,7 @@ public class OutfitManager : MonoBehaviour {
   [HideInInspector]public GameObject equipedClothes;
 
   public void EquipOutfit(Outfit outfit) {
+    AudioManager.instance.PlaySound(AudioManager.instance.effectList[2]);
     switch(outfit.outfitType) {
       case OutfitType.Clothes:
         equipedClothes = outfit.outFitAnimation;
@@ -23,6 +24,7 @@ public class OutfitManager : MonoBehaviour {
   }
 
   public void UnequipOutfit(Outfit outfit) {
+    AudioManager.instance.PlaySound(AudioManager.instance.effectList[2]);
     switch(outfit.outfitType) {
       case OutfitType.Clothes:
         equipedClothes = null;

@@ -9,6 +9,7 @@ public class ShopKeeper : Interactable {
 
   public override void Interact() {
     base.Interact();
+    AudioManager.instance.PlaySound(AudioManager.instance.effectList[0]);
     gameMenu.ActivateShop();
     EnableInteraction(false);
   }

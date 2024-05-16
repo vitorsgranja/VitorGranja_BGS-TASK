@@ -65,6 +65,7 @@ public class GenericInventoryManager : MonoBehaviour {
 
   // Select an item when clicked
   protected virtual void SelectItem(Outfit selectedItem) {
+    AudioManager.instance.PlaySound(AudioManager.instance.effectList[0]);
     Debug.Log("Selected item: " + selectedItem.outfitName);
     selectedItemNameText.text = "Selected:\n" + selectedItem.outfitName;
     selectedSlot = contentParent.Find(selectedItem.outfitName).gameObject;

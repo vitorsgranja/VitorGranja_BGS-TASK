@@ -10,6 +10,7 @@ public class ShopInventory : GenericInventoryManager {
     if(selectedSlot != null) {
       Outfit selectedItem = selectedSlot.GetComponent<InventorySlot>().item;
       if(selectedItem.price <= GameManager.instance.GetPlayerMoney() && selectedItem.bought == false) {
+        AudioManager.instance.PlaySound(AudioManager.instance.effectList[1]);
         selectedItem.bought = true;
         gameMenu.UpdateMoney(-selectedItem.price);
         RemoveItem(selectedItem);
@@ -37,10 +38,10 @@ public class ShopInventory : GenericInventoryManager {
 
   // Checks if sold item is equipped, if so, unequip it
   private void CheckItemOnSell(Outfit selectedItem) {
-    if(playerInventory.outfitManager.equipedHat != null && playerInventory.outfitManager.equipedHat == selectedItem.outFitAnimation) {
+    if(playerInventory.outfitManager.equipedHat != null) {
       playerInventory.UnequipItem();
     }
-    if(playerInventory.outfitManager.equipedClothes != null && playerInventory.outfitManager.equipedClothes == selectedItem.outFitAnimation) {
+    if(playerInventory.outfitManager.equipedClothes != null) {
       playerInventory.UnequipItem();
     }
   }
